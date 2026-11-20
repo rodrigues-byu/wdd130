@@ -1,0 +1,168 @@
+/* VARIÁVEIS DE CORES E FONTES */
+:root {
+    --cor-primaria: #055a05;
+    --cor-secundaria: #f4a261;
+    --cor-destaque1: #264653;
+    --cor-destaque2: #e9c46a;
+
+    --fonte-titulo: Georgia, "Times New Roman", serif;
+    --fonte-body: Arial, Helvetica, sans-serif;
+}
+
+/* RESET DO CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILO GERAL */
+body {
+    font-family: var(--fonte-body);
+    color: var(--cor-destaque1);
+    background-color: #ffffff;
+}
+
+/* LARGURA E CENTRALIZAÇÃO */
+header,
+main,
+footer {
+    width: 840px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-primaria);
+    padding: 15px;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+/* MENU DE NAVEGAÇÃO */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--cor-destaque2);
+}
+
+/* TÍTULOS */
+h1,
+h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria);
+    text-align: center;
+}
+
+/* ESPAÇAMENTOS */
+nav,
+p,
+section,
+article {
+    margin: 5px;
+    padding: 0px;
+}
+
+/* IMAGEM HERO */
+.hero {
+    position: relative;
+}
+
+.hero > img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+/* TÍTULO SOBRE A IMAGEM */
+.hero h1 {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    opacity: 0.9;
+    background-color: var(--cor-destaque1);
+    color: #ffffff;
+}
+
+/* ARTICLE SOBRE A IMAGEM */
+.hero article {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--cor-destaque1);
+    padding: 15px;
+}
+
+/* IMAGEM DENTRO DO ARTICLE */
+.hero article img {
+    float: right;
+    width: 115px;
+    margin: 0 0 10px 15px;
+    border: 2px solid var(--cor-primaria);
+}
+
+/* SEÇÕES */
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+section h2 {
+    margin-bottom: 0px;
+}
+
+section p {
+    line-height: 1.6;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* REDES SOCIAIS */
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.redes-sociais a {
+    text-decoration: none;
+}
+
+.redes-sociais img {
+    width: 70px;
+    height: 70px;
+}
