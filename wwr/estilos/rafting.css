@@ -20,6 +20,7 @@ body {
     background-color: #fff;
 }
 
+/* Largura geral do site */
 header,
 main,
 footer {
@@ -28,21 +29,26 @@ footer {
     margin: 0 auto;
 }
 
+/* CABEÇALHO COM CSS GRID */
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 120px 1fr;
     align-items: center;
-    justify-content: space-between;
     padding: 20px;
     background-color: var(--cor-destaque1);
 }
 
+/* Logotipo */
 header img {
     width: 100px;
     height: auto;
 }
 
+/* NAVEGAÇÃO COM FLEXBOX */
 header nav {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     gap: 20px;
 }
 
@@ -52,6 +58,11 @@ header nav a {
     font-weight: bold;
 }
 
+header nav a:hover {
+    color: var(--cor-destaque2);
+}
+
+/* TÍTULOS */
 h1,
 h2 {
     font-family: var(--fonte-titulo);
@@ -66,11 +77,13 @@ p {
     line-height: 1.6;
 }
 
+/* SEÇÕES */
 section {
     margin: 30px 20px;
     padding: 20px;
 }
 
+/* IMAGEM PRINCIPAL */
 .hero {
     position: relative;
 }
@@ -109,6 +122,51 @@ section {
     margin-left: 15px;
 }
 
+/* SEÇÃO HISTÓRIA */
+.historia-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.historia-conteudo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* SEÇÃO DE AVENTURAS */
+.aventuras {
+    text-align: center;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.galeria figure {
+    text-align: center;
+}
+
+.galeria img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.galeria figcaption {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--cor-destaque1);
+}
+
+/* RODAPÉ */
 footer {
     display: flex;
     justify-content: space-between;
@@ -122,8 +180,11 @@ footer p {
     font-size: 14px;
 }
 
+/* REDES SOCIAIS */
 .redes-sociais {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     gap: 15px;
 }
 
@@ -134,4 +195,35 @@ footer p {
 .redes-sociais img {
     width: 30px;
     height: 30px;
+    object-fit: contain;
+}
+
+/* ADAPTAÇÃO PARA CELULAR */
+@media screen and (max-width: 600px) {
+
+    header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 15px;
+    }
+
+    header nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .historia-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }
