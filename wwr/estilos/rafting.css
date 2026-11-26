@@ -3,24 +3,29 @@
     --cor-secundaria: #f4a261;
     --cor-destaque1: #264653;
     --cor-destaque2: #e9c46a;
+    --cor-texto: #333333;
+    --cor-fundo: #ffffff;
+    --cor-branca: #ffffff;
+    --cor-overlay: rgba(255, 255, 255, 0.9);
 
     --fonte-titulo: Georgia, serif;
     --fonte-texto: Arial, sans-serif;
 }
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* CONFIGURAÇÃO GERAL */
 body {
     font-family: var(--fonte-texto);
-    color: #333;
-    background-color: #fff;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
 }
 
-/* Largura geral do site */
 header,
 main,
 footer {
@@ -29,7 +34,7 @@ footer {
     margin: 0 auto;
 }
 
-/* CABEÇALHO COM CSS GRID */
+/* CABEÇALHO COM GRID */
 header {
     display: grid;
     grid-template-columns: 120px 1fr;
@@ -38,7 +43,7 @@ header {
     background-color: var(--cor-destaque1);
 }
 
-/* Logotipo */
+/* LOGOTIPO */
 header img {
     width: 100px;
     height: auto;
@@ -49,17 +54,19 @@ header nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
 }
 
 header nav a {
-    color: white;
+    color: var(--cor-branca);
     text-decoration: none;
     font-weight: bold;
 }
 
-header nav a:hover {
+header nav a:hover,
+header nav a:focus {
     color: var(--cor-destaque2);
+    outline-offset: 4px;
 }
 
 /* TÍTULOS */
@@ -83,7 +90,7 @@ section {
     padding: 20px;
 }
 
-/* IMAGEM PRINCIPAL */
+/* HERO */
 .hero {
     position: relative;
 }
@@ -100,9 +107,9 @@ section {
     width: 100%;
     padding: 15px;
     text-align: center;
-    color: white;
+    color: var(--cor-branca);
     background-color: var(--cor-destaque1);
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 .hero article {
@@ -111,7 +118,7 @@ section {
     left: 20px;
     right: 20px;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--cor-overlay);
     overflow: auto;
 }
 
@@ -122,7 +129,7 @@ section {
     margin-left: 15px;
 }
 
-/* SEÇÃO HISTÓRIA */
+/* HISTÓRIA */
 .historia-conteudo {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -131,12 +138,12 @@ section {
 }
 
 .historia-conteudo img {
+    display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
 }
 
-/* SEÇÃO DE AVENTURAS */
+/* AVENTURAS */
 .aventuras {
     text-align: center;
 }
@@ -153,9 +160,9 @@ section {
 }
 
 .galeria img {
+    display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
     border-radius: 5px;
 }
 
@@ -173,7 +180,7 @@ footer {
     align-items: center;
     padding: 20px;
     background-color: var(--cor-destaque1);
-    color: white;
+    color: var(--cor-branca);
 }
 
 footer p {
@@ -198,7 +205,7 @@ footer p {
     object-fit: contain;
 }
 
-/* ADAPTAÇÃO PARA CELULAR */
+/* RESPONSIVIDADE */
 @media screen and (max-width: 600px) {
 
     header {
